@@ -30,6 +30,7 @@
     "lint:fix": "n8n-node lint --fix",
     "release": "n8n-node release",
     "publish-npm": "node scripts/publish-npm.js",
+    "release:gh": "node scripts/release.js",
     "prepublishOnly": "n8n-node prerelease"
   },
   "files": [
