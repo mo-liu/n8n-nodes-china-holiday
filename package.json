@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-china-holiday",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "n8n community node for querying Chinese public holidays and workday adjustments",
   "license": "MIT",
   "homepage": "https://github.com/mo-liu/n8n-nodes-china-holiday",
