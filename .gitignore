@@ -1,0 +1,10 @@
+dist
+node_modules
+.claude/
+*.log
+.env
+
+
+complete-workflow.json
+node-workflow.json
+scripts/publish-npm.js

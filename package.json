@@ -1,0 +1,68 @@
+{
+  "name": "n8n-nodes-china-holiday",
+  "version": "1.0.0",
+  "description": "n8n community node for querying Chinese public holidays and workday adjustments",
+  "license": "MIT",
+  "homepage": "https://github.com/mo-liu/n8n-nodes-china-holiday",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n-nodes-china-holiday",
+    "n8n",
+    "holiday",
+    "china-holiday",
+    "chinese-calendar"
+  ],
+  "author": {
+    "name": "mqq"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mo-liu/n8n-nodes-china-holiday.git"
+  },
+  "scripts": {
+    "build": "n8n-node build",
+    "build:watch": "tsc --watch",
+    "dev": "concurrently --raw --kill-others \"npm run build:watch\" \"cross-env N8N_DEV_RELOAD=true EXECUTIONS_PROCESS=main n8n start\"",
+    "dev:google": "concurrently --raw --kill-others \"npm run build:watch\" \"cross-env HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 N8N_DEV_RELOAD=true EXECUTIONS_PROCESS=main n8n start\"",
+    "dev:debug": "concurrently --raw --kill-others \"npm run build:watch\" \"cross-env N8N_DEV_RELOAD=true EXECUTIONS_PROCESS=main NODE_OPTIONS='--inspect' n8n start\"",
+    "start:debug": "cross-env EXECUTIONS_PROCESS=main NODE_OPTIONS='--inspect' n8n start",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "release": "n8n-node release",
+    "publish-npm": "node scripts/publish-npm.js",
+    "prepublishOnly": "n8n-node prerelease"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "images"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "nodes": [
+      "dist/nodes/Weather/Weather.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@n8n/node-cli": "0.22.0",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
+    "eslint": "^9.0.0",
+    "n8n": "2.16.0",
+    "prettier": "^3.2.5",
+    "release-it": "^17.0.3",
+    "sqlite3": "^5.1.7",
+    "typescript": "~5.3.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": ">=1.0.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sqlite3"
+    ],
+    "overrides": {
+      "change-case": "4.1.2"
+    }
+  }
+}
